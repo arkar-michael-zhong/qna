@@ -14,7 +14,10 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <div class="title m-b-md">
+                    <a href="{{ route('questions.index') }}">Go to all Question Page</a>
+                </div>
+
                 </div>
             </div>
         </div>
