@@ -68,7 +68,7 @@
     {{-- ANSWER-SESSION --}}
     @include('answers._index', [
         'answers' => $question->answers,
-        'answersCount' => $question->answers_Count,
+        'answersCount' => $question->answers_count,
     ]);
     @include('answers._create');
     {{-- //ANSWER-SESSION END --}}

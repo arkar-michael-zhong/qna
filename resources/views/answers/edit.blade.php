@@ -16,7 +16,7 @@
                         @csrf
                         @method('PATCH')
                         <div class="form-group">
-                            <textarea class="form-control @error('body') is-invalid @enderror" autocomplete="body" autofocus rows="7" name="body">{{ old('body') }}</textarea>
+                            <textarea class="form-control @error('body') is-invalid @enderror" autocomplete="body" autofocus rows="7" name="body">{{ old('body', $answer->body) }}</textarea>
                             @error('body')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
