@@ -47,7 +47,7 @@ class QuestionsController extends Controller
     {
         $request->user()->questions()->create($request->only('title', 'body'));
 
-        return redirect()->route('questions.index')->with('success', "Your question has been subbmitted.");
+        return redirect()->route('questions.index')->with('success', "ခင်များရဲ့ မေးခွန်း အောင်မြင်စွာ တင်ပြီးပါပြီ။");
     }
 
     /**
@@ -87,7 +87,7 @@ class QuestionsController extends Controller
         $this->authorize("update", $question);
         $question->update($request->only('title', 'body'));
 
-        return redirect('/questions')->with('success', "Your question has been updated");
+        return redirect('/questions')->with('success', "ခင်များရဲ့ မေးခွန်း အောင်မြင်စွာ ပြင်ပြီးပါပြီ။");
     }
 
     /**
@@ -100,6 +100,6 @@ class QuestionsController extends Controller
     {
         $this->authorize("delete", $question);
         $question->delete();
-        return redirect('/questions')->with('success', "Your Question has been deleted");
+        return redirect('/questions')->with('success', "ခင်များရဲ့ မေးခွန်း အောင်မြင်စွာ ဖျက်ပြီးပါပြီ။");
     }
 }

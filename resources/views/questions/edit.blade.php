@@ -7,9 +7,9 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex align-items-center">
-                        <h2>Edit Question</h2>
+                        <h2>မေးခွန်းတွေ ကလိမယ်</h2>
                         <div class="ml-auto">
-                            <a href="{{ route('questions.index') }}" class="btn btn-outline-secondary">Back to all Questions</a>
+                            <a href="{{ route('questions.index') }}" class="btn btn-outline-secondary">ပေါက်တက်ကရ မေးထားတဲ့မေးခွန်းပေါင်းစုံ</a>
                         </div>
                     </div>
                 </div>

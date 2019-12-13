@@ -7,16 +7,16 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex align-items-center">
-                        <h2>Ask Question</h2>
+                        <h2>ပေါက်တက်ကရ မေးမယ်</h2>
                         <div class="ml-auto">
-                            <a href="{{ route('questions.index') }}" class="btn btn-outline-secondary">Back to all Questions</a>
+                            <a href="{{ route('questions.index') }}" class="btn btn-outline-secondary">ပေါက်တက်ကရ မေးထားတဲ့မေးခွန်းပေါင်းစုံ</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="card-body">
                     <form action="{{ route('questions.store') }}" method="POST">
-                        @include('questions._form', ['buttonText' => "Ask Question"])
+                        @include('questions._form', ['buttonText' => "မသိဖူးကွာ မေးမယ်"])
                     </form>
                 </div>
             </div>
