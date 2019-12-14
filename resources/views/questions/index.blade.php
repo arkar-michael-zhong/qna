@@ -7,10 +7,10 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex align-items-center">
-                            <h2>ပေါက်တက်ကရ မေးထားတဲ့မေးခွန်းပေါင်းစုံ</h2>
-                            <div class="ml-auto">
-                                <a href="{{ route('questions.create') }}" class="btn btn-outline-secondary">မေးခွန်းမေးမယ်</a>
-                            </div>
+                        <h2>ပေါက်တက်ကရ မေးထားတဲ့မေးခွန်းပေါင်းစုံ</h2>
+                        <div class="ml-auto">
+                            <a href="{{ route('questions.create') }}" class="btn btn-outline-secondary">မေးခွန်းမေးမယ်</a>
+                        </div>
                     </div>
                 </div>
 
@@ -39,7 +39,7 @@
                                     @endcan
 
                                     @can ('delete', $question)
-                                        <form class="form-delete" method="post" action="{{ route('questions.destroy', $question->id) }}">
+                                    <form class="form-delete" method="post" action="{{ route('questions.destroy', $question->id) }}">
                                         @method('DELETE')
                                         @csrf
                                         <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('မင်းဖျတ်မှာသေချာလား?')">ဖျက်မယ်</button>
@@ -51,7 +51,9 @@
                                 Asked by <a href="{{ $question->user->url }}">{{ $question->user->name }}</a>
                                 <small class="text-muted">{{ $question->created_date }}</small>
                             </p>
-                            {{ Str::limit($question->body, 300) }}
+                            <div class="excerpt">
+                                {{ $question->excerpt(400) }}
+                            </div>
                         </div>
                     </div>
                     <hr>
