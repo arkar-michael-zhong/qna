@@ -1,3 +1,4 @@
+@if ($answersCount > 0)
 {{-- ANSWER-SESSION --}}
 <div class="row mt-5">
     <div class="col-md-12">
@@ -15,7 +16,7 @@
                 <div class="media">
                     {{-- VOTE-CONTROLS --}}
                     @include('shared._vote', [
-                        'model' => $answer
+                    'model' => $answer
                     ])
                     {{-- //VOTE-CONTROLS END --}}
 
@@ -59,3 +60,6 @@
     </div>
 </div>
 {{-- //ANSWER-SESSION END --}}
+
+@endif
+
