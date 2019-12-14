@@ -22,7 +22,7 @@
                     <div class="media">
                         {{-- VOTE-CONTROLS --}}
                         @include('shared._vote', [
-                            'model' => $question
+                        'model' => $question
                         ])
                         {{-- //VOTE-CONTROLS END --}}
 
@@ -33,10 +33,7 @@
                                 <div class="col-4"></div>
                                 <div class="col-4"></div>
                                 <div class="col-4">
-                                    @include('shared._author', [
-                                    'model' => $question,
-                                    'label' => 'asked'
-                                    ])
+                                    <user-info :model="{{ $question }}" label="Asked"></user-info>
                                 </div>
                             </div>
                         </div>
