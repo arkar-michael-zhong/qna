@@ -38,7 +38,7 @@ export default {
         },
 
         destroy(){
-            this.$toast.question('Are you sure about that?', "Confirm", {
+            this.$toast.question('မင်းသေချာပီလား??', "Confirm", {
                 timeout: 20000,
                 close: false,
                 overlay: true,
@@ -64,7 +64,7 @@ export default {
                         instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
 
                     }],
-                ],
+                ]
             });
 
         }

@@ -13,8 +13,8 @@
                 <div class="form-group">
                     <textarea class="form-control" v-model="body" rows="10" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary" :disabled="isInvalid">Update</button>
-                <button type="button" @click="cancel" class="btn btn-outline-secondary">Cancel</button>
+                <button type="submit" class="btn btn-outline-primary" :disabled="isInvalid">သေချာပီလား</button>
+                <button type="button" @click="cancel" class="btn btn-outline-danger">မသေချာဘူး</button>
 
             </form>
             <div v-else>
