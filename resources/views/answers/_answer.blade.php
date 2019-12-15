@@ -11,7 +11,7 @@
         <div class="media-body">
             <form v-if="editing" @submit.prevent="update">
                 <div class="form-group">
-                      <textarea class="form-control" v-model="body" rows="10" required></textarea>
+                    <textarea class="form-control" v-model="body" rows="10" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary" :disabled="isInvalid">Update</button>
                 <button type="button" @click="cancel" class="btn btn-outline-secondary">Cancel</button>
@@ -27,11 +27,8 @@
                             @endcan
 
                             @can ('delete', $answer)
-                            <form class="form-delete" method="post" action="{{ route('questions.answers.destroy', [$question->id, $answer->id]) }}">
-                                @method('DELETE')
-                                @csrf
-                                <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('မင်းဖျတ်မှာသေချာလား?')">ဖျက်မယ်</button>
-                            </form>
+                            <button @click="destroy" class="btn btn-sm btn-outline-danger">ဖျက်မယ်</button>
+
                             @endcan
                         </div>
                     </div>

@@ -74,6 +74,12 @@ class AnswersController extends Controller
 
                     $answer->delete();
 
+                    if (request()->expectsJson()) {
+                        return response()->json([
+                            'message' => "ခင်များရဲ့ အဖြေ အောင်မြင်စွာ ဖျက်ပြီးပါပြီ။"
+                        ]);
+                    }
+
                     return back()->with('success', "ခင်များရဲ့ အဖြေ အောင်မြင်စွာ ဖျက်ပြီးပါပြီ။");
                 }
             }
