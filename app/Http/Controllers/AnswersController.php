@@ -50,23 +50,30 @@ class AnswersController extends Controller
             $this->authorize('update', $answer);
             $answer->update($request->validate([
                 'body' => 'required',
-            ]));
+                ]));
 
-            return redirect()->route('questions.show', $question->slug)->with('success', "ခင်များရဲ့ အဖြေ အောင်မြင်စွာ ပြင်ပြီးပါပြီ။");
-        }
+                if ($request->expectsJson()) {
+                    return response()->json([
+                        'message' => 'your answer has been updated',
+                        'body_html' => $answer->body_html
+                        ]);
+                    }
 
-        /**
-        * Remove the specified resource from storage.
-        *
-        * @param  \App\Answer  $answer
-        * @return \Illuminate\Http\Response
-        */
-        public function destroy(Question $question, Answer $answer)
-        {
-            $this->authorize('delete', $answer);
+                    return redirect()->route('questions.show', $question->slug)->with('success', "ခင်များရဲ့ အဖြေ အောင်မြင်စွာ ပြင်ပြီးပါပြီ။");
+                }
 
-            $answer->delete();
+                /**
+                * Remove the specified resource from storage.
+                *
+                * @param  \App\Answer  $answer
+                * @return \Illuminate\Http\Response
+                */
+                public function destroy(Question $question, Answer $answer)
+                {
+                    $this->authorize('delete', $answer);
 
-            return back()->with('success', "ခင်များရဲ့ အဖြေ အောင်မြင်စွာ ဖျက်ပြီးပါပြီ။");
-        }
-    }
+                    $answer->delete();
+
+                    return back()->with('success', "ခင်များရဲ့ အဖြေ အောင်မြင်စွာ ဖျက်ပြီးပါပြီ။");
+                }
+            }
