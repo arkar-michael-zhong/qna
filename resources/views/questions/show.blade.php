@@ -21,9 +21,7 @@
                     {{-- VOTE-CONTROLS AND CREATED_DATE-AND-AVATER --}}
                     <div class="media">
                         {{-- VOTE-CONTROLS --}}
-                        @include('shared._vote', [
-                        'model' => $question
-                        ])
+                        <vote :model="{{ $question }}" name="question"></vote>
                         {{-- //VOTE-CONTROLS END --}}
 
                         {{-- CREATED_DATE-AND-AVATER --}}

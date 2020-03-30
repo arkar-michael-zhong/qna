@@ -2,9 +2,7 @@
     {{-- VOTE-CONTROLS AND CREATED_DATE-AND-AVATER --}}
     <div class="media post">
         {{-- VOTE-CONTROLS --}}
-        @include('shared._vote', [
-        'model' => $answer
-        ])
+        <vote :model="{{ $answer }}" name="answer"></vote>
         {{-- //VOTE-CONTROLS END --}}
 
         {{-- CREATED_DATE-AND-AVATER --}}

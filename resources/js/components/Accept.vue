@@ -1,3 +1,6 @@
+// app.js:10549 Uncaught (in promise) TypeError: Cannot read property 'protocol' of undefined
+// error ဖြစ်နေသေးတယ် မပီးသေးဖူး
+
 <template>
     <div>
         <a v-if="canAccept" title="Mark this answer as best answer" :class="classes" @click.prevent="create">
