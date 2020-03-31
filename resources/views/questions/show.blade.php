@@ -45,7 +45,7 @@
     {{-- //QUESTION-SESSION END --}}
 
     {{-- ANSWER-SESSION --}}
-    <answers :answers="{{ $question->answers }}" :count="{{ $question->answers_count }}"></answers>
+    <answers :question="{{ $question }}"></answers>
     @include('answers._create');
     {{-- //ANSWER-SESSION END --}}
 </div>
