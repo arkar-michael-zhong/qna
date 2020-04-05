@@ -87,6 +87,13 @@ class QuestionsController extends Controller
         $this->authorize("update", $question);
         $question->update($request->only('title', 'body'));
 
+        if ($request->expectsJson()) {
+            return response()->json([
+                'message' => "ခင်များရဲ့ မေးခွန်း အောင်မြင်စွာ ပြင်ပြီးပါပြီ။",
+                'body_html' => $question->body_html
+            ]);
+        }
+
         return redirect('/questions')->with('success', "ခင်များရဲ့ မေးခွန်း အောင်မြင်စွာ ပြင်ပြီးပါပြီ။");
     }
 
@@ -100,6 +107,13 @@ class QuestionsController extends Controller
     {
         $this->authorize("delete", $question);
         $question->delete();
+
+        if ($request->expectsJson) {
+            return response()->json([
+                'message' => "ခင်များရဲ့ မေးခွန်း အောင်မြင်စွာ ဖျက်ပြီးပါပြီ။"
+            ]);
+        }
+
         return redirect('/questions')->with('success', "ခင်များရဲ့ မေးခွန်း အောင်မြင်စွာ ဖျက်ပြီးပါပြီ။");
     }
 }
