@@ -28,9 +28,16 @@ class AnswersController extends Controller
     public function store(Question $question, Request $request)
     {
 
-        $question->answers()->create($request->validate([
+        $answer = $question->answers()->create($request->validate([
             'body' => 'required'
             ]) + ['user_id' => \Auth::id()]);
+
+            if ($request->expectsJson()) {
+                return response()->json([
+                    'message' => "ခင်များရဲ့ အဖြေအောင်မြင်စွာ တင်ပြီးပါပြီ။",
+                    'answer' => $answer->load('user')
+                ]);
+            }
 
             return back()->with('success', "ခင်များရဲ့ အဖြေအောင်မြင်စွာ တင်ပြီးပါပြီ။");
         }

@@ -46,7 +46,6 @@
 
     {{-- ANSWER-SESSION --}}
     <answers :question="{{ $question }}"></answers>
-    @include('answers._create');
     {{-- //ANSWER-SESSION END --}}
 </div>
 @endsection
