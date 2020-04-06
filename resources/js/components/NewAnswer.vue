@@ -10,7 +10,9 @@
 
                     <form @submit.prevent="create">
                         <div class="form-group">
-                            <textarea class="form-control" autocomplete="body" autofocus v-model="body" rows="7" name="body"></textarea>
+                            <m-editor :body="body" name="new-answer">
+                                <textarea class="form-control" autocomplete="body" autofocus v-model="body" rows="7" name="body"></textarea>
+                            </m-editor>
                         </div>
                         <div class="form-group">
                             <button type="submit" :disabled="isInvalid" class="btn btn-lg btn-outline-primary">ရမ်းနှိပ်မယ်</button>
@@ -23,8 +25,12 @@
 </template>
 
 <script>
+import MEditor from './MEditor.vue';
+
 export default {
     props: ['questionId'],
+
+    components: { MEditor },
 
     methods: {
         create() {
